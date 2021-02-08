@@ -1,3 +1,16 @@
+var date = new Date();
+// get the date as a string
+var daysToLaunch = 18;
+date.setDate(date.getDate() + daysToLaunch);
+
+var m = date.toDateString();
+// get the time as a string
+var time = date.toLocaleTimeString();
+
+// find the html element with the id of time
+// set the innerHTML of that element to the date a space the time
+document.getElementById('time').innerHTML = m + ' ' + time;
+
 function padLeadingZeros(num, size) {
     var s = num+"";
     while (s.length < size) s = "0" + s;
@@ -5,7 +18,7 @@ function padLeadingZeros(num, size) {
 }
 
 setInterval(function updateTime(){
-	var launchDate = new Date(2021, 00, 25, 0, 01, 0), //change this to a date in the future test
+	var launchDate = date,
 	currentDate = new Date(),
 	difference = Math.abs(launchDate - currentDate) / 1000,
 	days = Math.floor(difference / 86400),
@@ -14,24 +27,24 @@ setInterval(function updateTime(){
 	seconds =  difference % 60,
 	counters = document.querySelectorAll('.counter');
 
-		for(var i = 0; i < counters.length; i++){
+	for(var i = 0; i < counters.length; i++){
 
-			switch (counters[i].getAttribute('data-counttype')) {
-				case 'days':
-					counters[i].innerHTML = padLeadingZeros(days, 2);
-				break;
-				case 'hours':
-					counters[i].innerHTML = padLeadingZeros(hours, 2);
-				break;
-				case 'minutes':
-					counters[i].innerHTML = padLeadingZeros(Math.round(mins), 2);
-				break;
-				case 'seconds':
-					counters[i].innerHTML = padLeadingZeros(Math.round(seconds), 2);
-				break;
-				default:
+		switch (counters[i].getAttribute('data-counttype')) {
+			case 'days':
+				counters[i].innerHTML = padLeadingZeros(days, 2);
+			break;
+			case 'hours':
+				counters[i].innerHTML = padLeadingZeros(hours, 2);
+			break;
+			case 'minutes':
+				counters[i].innerHTML = padLeadingZeros(Math.round(mins), 2);
+			break;
+			case 'seconds':
+				counters[i].innerHTML = padLeadingZeros(Math.round(seconds), 2);
+			break;
+			default:
 
-				break;
-			}
+			break;
 		}
+	}
 }, 1000);

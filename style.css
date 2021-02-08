@@ -30,67 +30,72 @@ h3 {
   color:hsl(237, 18%, 59%);
 }
 
+/* shared counterContainer props */
 .countdownContainer {
-display:flex;
-justify-content: center;
+  display:flex;
+  justify-content: center;
 }
 .countdownContainer > div {
-margin: 50px 20px;
+  margin: 50px 20px;
 }
 .counterContainer {
-margin-bottom: 20px;
-height: 200px;
-width: 200px;
-background: #34364F;
-font-size: 80px;
-color:hsl(345, 95%, 68%);
-display:flex;
-align-items:center;
-justify-content: center;
-border-radius: 10px;
-position:relative;
-z-index:1;
-overflow: hidden;
-box-shadow: 0px 10px 1px 1px #1A1A24;
+  margin-bottom: 20px;
+  height: 200px;
+  width: 200px;
+  background: #34364F;
+  font-size: 80px;
+  color:hsl(345, 95%, 68%);
+  display:flex;
+  align-items:center;
+  justify-content: center;
+  border-radius: 10px;
+  position:relative;
+  z-index:1;
+  overflow: hidden;
+  box-shadow: 0px 10px 1px 1px #1A1A24;
 }
+
 
 .counterContainer:before, .counterContainer:after {
-content: '';
-height: 15px;
-width: 15px;
-border-radius: 50%;
-background: #181B24;
-position: absolute;
+  content: '';
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background: #181B24;
+  position: absolute;
 }
 
+/* space out each container left/right */
 .counterContainer:before {
-left: -7px;
-}
-.counterContainer:after {
-right: -7px;
+  left: -7px;
 }
 
+.counterContainer:after {
+  right: -7px;
+}
+
+/* Immediate children spans of counterContainers */
 .counterContainer > span {
-height: 50%;
-width: 100%;
-position:absolute;
-top: 0;
+  height: 50%;
+  width: 100%;
+  position:absolute;
+  top: 0;
   background: #1d1d2d;
   opacity: 0.3;
-border-bottom: 1px solid #0f0f18;
+  border-bottom: 1px solid #0f0f18;
 }
 
 footer {
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
   font-size: 11px; text-align: center;
   background-image: url('./images/pattern-hills.svg');
-      height: 197px;
+  height: 197px;
   background-repeat: no-repeat;
-background-size: cover;
+  background-size: cover;
 }
   footer a {
   color: #fff;
@@ -111,40 +116,41 @@ background-size: cover;
   margin-right: 20px;
 }
 
+/* Responsive design for screens <= 980 px */
 @media only screen and (max-width: 980px) {
-.content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.countdownContainer > div {
-margin: 50px 10px;
-}
-.counterContainer {
-height: 100px;
-width: 100px;
-font-size: 40px;
-}
-.counterContainer:before, .counterContainer:after {
-content: '';
-height: 10px;
-width: 10px;
-border-radius: 50%;
-background: #181B24;
-position: absolute;
-}
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .countdownContainer > div {
+    margin: 50px 10px;
+  }
+  .counterContainer {
+    height: 100px;
+    width: 100px;
+    font-size: 40px;
+  }
+  .counterContainer:before, .counterContainer:after {
+    content: '';
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background: #181B24;
+    position: absolute;
+  }
 
-.counterContainer:before {
-left: -5px;
-}
-.counterContainer:after {
-right: -5px;
-}
-h1 {
-font-size: 1.8em;
-}
-h3{
-font-size: 10px;
-}
+  .counterContainer:before {
+    left: -5px;
+  }
+  .counterContainer:after {
+    right: -5px;
+  }
+  h1 {
+    font-size: 1.8em;
+  }
+  h3{
+    font-size: 10px;
+  }
 }
