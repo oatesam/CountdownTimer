@@ -1,22 +1,19 @@
+// Initialize Launch Date
 var date = new Date();
-// get the date as a string
 var daysToLaunch = 18;
 date.setDate(date.getDate() + daysToLaunch);
-
 var m = date.toDateString();
-// get the time as a string
 var time = date.toLocaleTimeString();
-
-// find the html element with the id of time
-// set the innerHTML of that element to the date a space the time
 document.getElementById('time').innerHTML = m + ' ' + time;
 
+// Handle single-digits gracefully
 function padLeadingZeros(num, size) {
     var s = num+"";
     while (s.length < size) s = "0" + s;
     return s;
 }
 
+// Update countdown every second
 setInterval(function updateTime(){
 	var launchDate = date,
 	currentDate = new Date(),
