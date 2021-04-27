@@ -1,7 +1,7 @@
 // Initialize Launch Date
-var date = new Date();
-var daysToLaunch = 18;
-date.setDate(date.getDate() + daysToLaunch);
+var date = new Date('May 1, 2021 21:30:00');
+// var daysToLaunch = 18;
+// date.setDate(date.getDate() + daysToLaunch);
 var m = date.toDateString();
 var time = date.toLocaleTimeString();
 document.getElementById('time').innerHTML = m + ' ' + time;
